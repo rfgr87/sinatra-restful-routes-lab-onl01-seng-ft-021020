@@ -5,5 +5,7 @@ class ApplicationController < Sinatra::Base
   end
 
   # code actions here!
+  
+  get
 
 end
