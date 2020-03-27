@@ -6,6 +6,11 @@ class ApplicationController < Sinatra::Base
 
   # code actions here!
   
-  get
+  get '/new' do 
+    erb :new 
+  end 
+  
+  post '/new' do 
+    @recipie = Recipie.new()
 
 end
