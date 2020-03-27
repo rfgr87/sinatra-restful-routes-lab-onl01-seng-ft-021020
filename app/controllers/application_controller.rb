@@ -11,6 +11,8 @@ class ApplicationController < Sinatra::Base
   end 
   
   post '/new' do 
-    @recipie = Recipie.new()
+    @recipie = Recipie.new(name: params[:name], ingridients: params[:ingridients], cooktime: params[:cook_time])
+    @recipie.save
+    
 
 end
