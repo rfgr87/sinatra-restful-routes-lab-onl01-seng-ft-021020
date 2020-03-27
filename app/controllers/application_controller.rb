@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
     @recipie = Recipie.new(name: params[:name], ingridients: params[:ingridients], cook_time: params[:cook_time])
     if @recipie.save
       @recipie.save
-      erb :"/recipie/:id"
+      erb :"/show"
     else 
       redirect :new
     end
@@ -22,5 +22,5 @@ class ApplicationController < Sinatra::Base
   
   get '/recipie/:id'
     @recipie = Recipie.find_by(params[:id])
-    erb :'/recipie/:id'
+    erb :'/show'
 end
