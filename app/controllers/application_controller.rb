@@ -23,4 +23,5 @@ class ApplicationController < Sinatra::Base
   get '/recipie/:id'
     @recipie = Recipie.find_by(params[:id])
     erb :'/show'
+  end
 end
