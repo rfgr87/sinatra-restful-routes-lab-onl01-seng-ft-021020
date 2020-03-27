@@ -13,6 +13,6 @@ class ApplicationController < Sinatra::Base
   post '/new' do 
     @recipie = Recipie.new(name: params[:name], ingridients: params[:ingridients], cooktime: params[:cook_time])
     @recipie.save
-    
+    if @recipie.save
 
 end
