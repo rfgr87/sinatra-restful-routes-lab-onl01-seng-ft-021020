@@ -20,17 +20,16 @@ class ApplicationController < Sinatra::Base
   
   
   post '/recipes' do
-    @recipie = Recipie.new(name: params[:name], ingridients: params[:ingridients], cook_time: params[:cook_time])
-    if @recipie.save
-      @recipie.save
-      erb :"/recipes/#{recipe.id}"
+    @recipe = Recipie.new(name: params[:name], ingridients: params[:ingridients], cook_time: params[:cook_time])
+    if @recipe.save
+      erb :"/recipes/#{@recipe.id}"
     else 
       redirect :new
     end
   end
   
   get '/recipie/:id'
-    @recipie = Recipie.find_by(params[:id])
+    @recipe = Recipie.find_by(params[:id])
     erb :'/show'
   end
 end
